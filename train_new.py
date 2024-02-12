@@ -644,7 +644,7 @@ if __name__ == '__main__':
     )
 
     if args.chp:
-        checkpoint_dir = '/content/gdrive/mae_pretrain_vit_base.pth'
+        checkpoint_dir = '/content/gdrive/MyDrive/mae_pretrain_vit_base.pth'
         checkpoint = torch.load(checkpoint_dir, map_location='cpu')
 
         print("Load pre-trained checkpoint from: %s" % checkpoint_dir)
