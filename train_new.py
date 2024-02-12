@@ -513,7 +513,7 @@ def parse_arguments():
     parser.add_argument('--k', type = int, default = 1)
     parser.add_argument('--epochs', type=int, required=True)
     parser.add_argument('--data_path',  required=True)
-    parser.add_argument('--download_data',  default=False)
+    parser.add_argument('--download_data',  default=True)
     parser.add_argument('--contamination',  type=float, default=0)
     parser.add_argument('--v',  type=float, default=0.0)
     parser.add_argument('--task',  default='train', choices = ['test', 'train'])
