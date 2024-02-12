@@ -16,8 +16,8 @@ from PIL import Image
 import models_vit
 from pos_embed import interpolate_pos_embed
 from timm.models.layers import trunc_normal_
-from defaults import assert_and_infer_cfg, get_cfg
-from models.build import build_model
+#from defaults import assert_and_infer_cfg, get_cfg
+#from models.build import build_model
 #sys.path.append("..")
 #from segment_anything import sam_model_registry, SamPredictor
 
