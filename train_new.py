@@ -143,7 +143,7 @@ def train(model, lr, weight_decay, train_dataset, val_dataset, epochs, criterion
 
         #mask = useSAM(img1, predictor) # type:numpy
         #mask2 = useSAM(img2, predictor)
-        mask_path = 'masks/{}_2.pt'.format(class_name)
+        mask_path = '/content/gdrive/MyDrive/mask.pt{}_2.pt'.format(class_name)
         mask = torch.load(mask_path)
                 # mask = torch.load('/home/traffic/Documents/ACode/FewSOME/src/masks/capsule_2.pt')
         mask = np.logical_not(mask)
