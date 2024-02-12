@@ -18,8 +18,8 @@ from pos_embed import interpolate_pos_embed
 from timm.models.layers import trunc_normal_
 from defaults import assert_and_infer_cfg, get_cfg
 from models.build import build_model
-sys.path.append("..")
-from segment_anything import sam_model_registry, SamPredictor
+#sys.path.append("..")
+#from segment_anything import sam_model_registry, SamPredictor
 
 def load_config(args):
     """
@@ -112,24 +112,6 @@ def create_batches(lst, n):
     for i in range(0, len(lst), n):
         yield lst[i:i + n]
 
-def useSAM(image, predictor):
-        #input = image.permute(1, 2, 0)
-        input = np.array(image.cpu())
-        input = np.transpose(input, (1, 2, 0))
-        input = input.astype(np.uint8)
-        predictor.set_image(input)
-        input_box = np.array([0, 0, 128, 128])
-        masks, _, _ = predictor.predict(  # masks:1,128,128
-            point_coords=None,
-            point_labels=None,
-            box=input_box[None, :],
-            multimask_output=False,
-        )
-        inverted_mask = np.logical_not(masks[0])
-        count = np.count_nonzero(inverted_mask) # 1W
-        x = np.count_nonzero(masks[0])          # 6.3k
-        mask = inverted_mask
-        return mask
 
 def train(model, lr, weight_decay, train_dataset, val_dataset, epochs, criterion, alpha, model_name, indexes, data_path, normal_class, dataset_name, smart_samp, k, eval_epoch, model_type, bs, num_ref_eval, num_ref_dist, device):
 
@@ -146,11 +128,6 @@ def train(model, lr, weight_decay, train_dataset, val_dataset, epochs, criterion
     best_f1=0
     best_acc=0
     stop_training = False
-    sam_checkpoint = "/home/traffic/Documents/ACode/pytorch-cutpaste-master (2)/sam_vit_b_01ec64.pth"
-    model_type = "vit_b"
-    sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
-    sam.to("cuda")
-    predictor = SamPredictor(sam)
     classes = ['bottle' , 'cable',  'capsule',  'carpet',  'grid',  'hazelnut', 'leather', 'metal_nut',  'pill',  'screw',  'tile',  'toothbrush',  'transistor',  'wood' , 'zipper']
     class_name = classes[normal_class]
     start_time = time.time()
@@ -166,7 +143,7 @@ def train(model, lr, weight_decay, train_dataset, val_dataset, epochs, criterion
 
         #mask = useSAM(img1, predictor) # type:numpy
         #mask2 = useSAM(img2, predictor)
-        mask_path = '/home/traffic/Documents/ACode/FewSOME/src/masks/{}_2.pt'.format(class_name)
+        mask_path = 'masks/{}_2.pt'.format(class_name)
         mask = torch.load(mask_path)
                 # mask = torch.load('/home/traffic/Documents/ACode/FewSOME/src/masks/capsule_2.pt')
         mask = np.logical_not(mask)
