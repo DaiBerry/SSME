@@ -15,7 +15,7 @@ import torch
 import torch.nn as nn
 
 import timm.models.vision_transformer
-from timm.models.vision_transformer import PatchEmbed, Block, ParallelScalingBlock
+from timm.models.vision_transformer import PatchEmbed, Block
 
 
 class VisionTransformer(timm.models.vision_transformer.VisionTransformer):
