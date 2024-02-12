@@ -1,0 +1,16 @@
+
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-3 --batch_size 16 --dataset 'mvtec' --normal_class 1 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 0.5 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 5e-4 --batch_size 16 --dataset 'mvtec' --normal_class 1 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 0.5 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-4 --batch_size 16 --dataset 'mvtec' --normal_class 2 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 0.01 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-3 --batch_size 16 --dataset 'mvtec' --normal_class 3 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 1.0 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-3 --batch_size 16 --dataset 'mvtec' --normal_class 4 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 0.01 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-3 --batch_size 16 --dataset 'mvtec' --normal_class 5 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 0.8 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-4 --batch_size 16 --dataset 'mvtec' --normal_class 6 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 0.5 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-4 --batch_size 16 --dataset 'mvtec' --normal_class 7 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 0.8 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-5 --batch_size 16 --dataset 'mvtec' --normal_class 8 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 0.01 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-5 --batch_size 16 --dataset 'mvtec' --normal_class 9 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 0.8 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-3 --batch_size 16 --dataset 'mvtec' --normal_class 10 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 1.0 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-3 --batch_size 16 --dataset 'mvtec' --normal_class 11 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 0.01 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-4 --batch_size 16 --dataset 'mvtec' --normal_class 12 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 0.8 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-3 --batch_size 16 --dataset 'mvtec' --normal_class 13 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 1.0 --task test
+python3 train_new.py -m model --num_ref_eval 60 --lr 1e-4 --batch_size 16 --dataset 'mvtec' --normal_class 14 -N 60 --eval_epoch 1 --epochs 256 --data_path /home/traffic/Documents/MvTec --alpha 0.8 --task test
